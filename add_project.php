@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../database.php';
+require 'database.php';
 
 // Vérifiez si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
@@ -45,7 +45,7 @@ if (!isset($_SESSION['user_id'])) {
         </form>
 
         <?php
-        require '../database.php';
+       
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $titre = htmlspecialchars($_POST['titre'], ENT_QUOTES, 'UTF-8');
             $description = htmlspecialchars($_POST['description'], ENT_QUOTES, 'UTF-8');

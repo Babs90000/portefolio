@@ -7,8 +7,6 @@ services:
       dockerfile: Dockerfile
     container_name: my_php_app
     volumes:
-      - ./public:/var/www/html/public
-      - ./admin:/var/www/html/admin
       - ./:/var/www/html
       - ./php.ini:/usr/local/etc/php/php.ini
       - ./apache.conf:/etc/apache2/conf-available/custom.conf

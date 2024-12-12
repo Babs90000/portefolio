@@ -21,7 +21,7 @@ if (!isset($_SESSION['user_id'])) {
         <h1 class="my-4">Supprimer un projet</h1>
 
         <?php
-        require '../database.php';
+        require 'database.php';
 
         // Récupérer tous les projets pour la liste déroulante
         $sql = "SELECT id, titre FROM projects";

@@ -46,7 +46,7 @@
         <h1 class="my-4">Mes réalisations</h1>
         <div class="row" id="projects">
             <?php
-            require '../database.php';
+            require 'database.php';
             $sql = "SELECT titre, description, url, image_blob FROM projects";
             $stmt = $bdd->query($sql);
 
