@@ -15,3 +15,9 @@ RUN a2enmod rewrite
 
 # Copier le code de l'application
 COPY . /var/www/html
+
+# Installer Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# Installer les dépendances PHP
+RUN composer install --no-dev --optimize-autoloader

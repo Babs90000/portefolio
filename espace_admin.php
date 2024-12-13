@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../database.php';
+require_once 'database.php';
 
 // Vérifiez si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
