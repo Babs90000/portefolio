@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../database.php';
+require 'database.php';
 
 // Vérifiez si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
@@ -23,7 +23,6 @@ if (!isset($_SESSION['user_id'])) {
         <h1 class="my-4">Mettre à jour un projet</h1>
 
         <?php
-        require '../database.php';
 
         // Récupérer tous les projets pour la liste déroulante
         $sql = "SELECT id, titre FROM projects";
