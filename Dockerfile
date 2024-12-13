@@ -13,11 +13,11 @@ RUN ln -s /etc/apache2/conf-available/custom.conf /etc/apache2/conf-enabled/cust
 # Activer les modules Apache nécessaires
 RUN a2enmod rewrite
 
-# Copier le code de l'application
-COPY . /var/www/html
-
 # Installer Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# Copier le code de l'application
+COPY . /var/www/html
 
 # Installer les dépendances PHP
 RUN composer install --no-dev --optimize-autoloader

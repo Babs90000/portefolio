@@ -54,7 +54,7 @@
                 echo '<div class="col-lg-4 col-sm-6 mb-4">';
                 echo '<div class="card h-100">';
                 if ($row['image_blob']) {
-                    echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image_blob']) . '" alt="' . htmlspecialchars($row['titre'], ENT_QUOTES, 'UTF-8') . '" class="card-img-top" style="min-height: 200px; object-fit: cover;">';
+                    echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image_blob']) . '" alt="' . htmlspecialchars($row['titre'], ENT_QUOTES, 'UTF-8') . '" class="card-img-top" style="height: 200px; object-fit: cover;">';
                 }
                 echo '<div class="card-body">';
                 echo '<h4 class="card-title">' . htmlspecialchars($row['titre'], ENT_QUOTES, 'UTF-8') . '</h4>';
