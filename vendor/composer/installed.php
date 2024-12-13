@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'admin/portefolio',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'b9bcdd97765d643351ba7b83fb1968be2878b397',
         'type' => 'phpmailer',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'admin/portefolio' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'b9bcdd97765d643351ba7b83fb1968be2878b397',
             'type' => 'phpmailer',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

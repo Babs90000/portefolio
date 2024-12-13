@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['user_nom'] = $user['nom'];
         $_SESSION['user_prenom'] = $user['prenom'];
         // Redirection vers une page protégée
-        header('Location: ./admin/espace_admin.php');
+        header('Location: espace_admin.php');
         exit;
     } else {
         $error_message = 'Email ou mot de passe incorrect';
