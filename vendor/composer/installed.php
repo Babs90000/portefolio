@@ -3,7 +3,7 @@
         'name' => 'admin/portefolio',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'b9bcdd97765d643351ba7b83fb1968be2878b397',
+        'reference' => 'fb386f1c8031b4fb2784b0ca77c4679a83da432f',
         'type' => 'phpmailer',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'admin/portefolio' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'b9bcdd97765d643351ba7b83fb1968be2878b397',
+            'reference' => 'fb386f1c8031b4fb2784b0ca77c4679a83da432f',
             'type' => 'phpmailer',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

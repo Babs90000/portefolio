@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $phpmailer->Host = 'smtp.gmail.com'; // Adresse du serveur SMTP de Gmail
         $phpmailer->SMTPAuth = true;
         $phpmailer->Username = 'camara.enc@gmail.com'; // Votre adresse e-mail Gmail
-        $phpmailer->Password = 'xrkq tbyu auoe ngot'; // Votre mot de passe Gmail
+        $phpmailer->Password = 'togl uqjd anhj fgkh'; // Votre mot de passe Gmail
         $phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $phpmailer->Port = 587;
 
