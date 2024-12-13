@@ -1,8 +1,8 @@
 <?php
-require './vendor/autoload.php';
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
@@ -22,8 +22,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $phpmailer->Port = 587;
 
-        // Désactiver le débogage SMTP
-        $phpmailer->SMTPDebug = 0; // 0 = off (pour la production), 1 = messages client, 2 = messages client et serveur
+        // Activer le débogage SMTP
+        $phpmailer->SMTPDebug = 2; // 0 = off (pour la production), 1 = messages client, 2 = messages client et serveur
+        $phpmailer->Debugoutput = 'html'; // Afficher les messages de débogage en HTML
 
         // Configurer l'encodage
         $phpmailer->CharSet = 'UTF-8';
@@ -40,10 +41,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Contenu de l'e-mail
         $phpmailer->isHTML(false); // Envoyer l'e-mail en texte brut
-        $phpmailer->Subject = "Demande de collaboration de " . $name;
-        $phpmailer->Body    = "Nom: " . $name . "\nEmail: " . $email . "\nMessage: \n" . $message;
+        $phpmailer->Subject = 'Nouveau message de ' . $name;
+        $phpmailer->Body    = 'Vous avez reçu un nouveau message de ' . $name . ' (' . $email . ') :<br><br>' . nl2br($message);
 
-        // Envoyer l'e-mail
         $phpmailer->send();
 
         // Envoyer l'e-mail de confirmation à l'utilisateur
@@ -53,13 +53,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $phpmailer->Body    = "Bonjour " . $name . ",\n\nMerci de votre intérêt pour collaborer avec moi. J'ai bien reçu votre message et je reviendrai vers vous dès que possible.\n\nCordialement,\nBabou CAMARA-DIABY";
         $phpmailer->send();
 
-        echo "Votre message a bien été envoyé.</br>";
+        echo "Votre message a bien été envoyé. La page va se rafraîchir dans 5 secondes...";
+        header("refresh:5");
+        exit();
     } catch (Exception $e) {
         echo "Votre message n'a pas été envoyé: {$phpmailer->ErrorInfo}</br>";
+        echo "La page va se rafraîchir dans 5 secondes...";
+        header("refresh:5");
+        exit();
     }
-
-    echo "Votre message a bien été envoyé. La page va se rafraîchir dans 5 secondes...";
-header("refresh:5");
-exit();
 }
 ?>
